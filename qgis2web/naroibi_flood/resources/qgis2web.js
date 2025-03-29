@@ -9,7 +9,7 @@ var map = new ol.Map({
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([4097514.397161, -148637.646151, 4109717.620098, -138478.735075], map.getSize());
+map.getView().fit([4097729.326988, -148580.068153, 4109932.551856, -138421.159699], map.getSize());
 
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
@@ -448,17 +448,6 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 
 //layer search
 
-var searchLayer = new SearchLayer({
-    layer: lyr_kenya_2,
-    colName: 'value',
-    zoom: 10,
-    collapsed: true,
-    map: map
-});
-map.addControl(searchLayer);
-document.getElementsByClassName('search-layer')[0].getElementsByTagName('button')[0].className += ' fa fa-binoculars';
-document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'Search feature ...';
-    
 
 //scalebar
 

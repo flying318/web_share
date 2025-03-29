@@ -538,3 +538,35 @@ document.addEventListener('DOMContentLoaded', function() {
     if (attributionControl) {
         bottomRightContainerDiv.appendChild(attributionControl);
     }
+
+// 确保 Nairobi flood 图层已经加载到地图中
+console.log('layerList', layersList); // 检查 layersList 中的图层
+// 确保 Nairobi flood 图层已经加载到地图中
+var floodLayer=layersList[2];
+
+if (floodLayer) {
+    // 初始状态：显示图层
+    floodLayer.setVisible(true);
+    // 添加按钮点击事件
+    document.getElementById('toggle-layer').addEventListener('click', function() {
+        var isVisible = floodLayer.getVisible();
+        floodLayer.setVisible(!isVisible);
+        
+        // 更新按钮文本
+        this.innerHTML = isVisible 
+            ? '<i class="fas fa-eye"></i> Show Flood Layer' 
+            : '<i class="fas fa-eye-slash"></i> Hide Flood Layer';
+    });
+} else {
+    console.error('Nairobi flood 图层未找到');
+}
+
+// 确保 layerList[0] 图层已经加载到地图中
+var baseLayer = layersList[0];
+
+// if (baseLayer) {
+//     // 设置透明度为 0.5（50% 透明度）
+//     baseLayer.setOpacity(0.8);
+// } else {
+//     console.error('layerList[0] 图层未找到');
+// }

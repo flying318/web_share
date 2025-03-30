@@ -4,7 +4,7 @@ var map = new ol.Map({
     renderer: 'canvas',
     layers: layersList,
     view: new ol.View({
-        extent: [10673321.470037, 2470908.876456, 10691904.198539, 2487031.862151], maxZoom: 28, minZoom: 1
+         maxZoom: 28, minZoom: 1
     })
 });
 
@@ -538,7 +538,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (attributionControl) {
         bottomRightContainerDiv.appendChild(attributionControl);
     }
-
 
 // 确保目标图层已经加载到地图中
 console.log('layerList', layersList); // 检查 layersList 中的图层

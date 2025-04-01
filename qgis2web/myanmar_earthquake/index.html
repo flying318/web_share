@@ -50,13 +50,37 @@
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
                 <div id="popup-content"></div>
             </div>
-            <!-- 添加一个按钮控件 -->
-            <button id="toggle-layer1" style="position: absolute; top: 10px; right: 10px; z-index: 1000; padding: 15px; background-color: white; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">
-                <i class="fas fa-eye"></i> Toggle Earthquake Layer
-            </button>
-            <button id="toggle-layer2" style="position: absolute; top: 60px; right: 10px; z-index: 1000; padding: 15px; background-color: white; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;">
-                <i class="fas fa-eye"></i> Toggle Satellite Layer
-            </button>
+            <!-- 添加图层控制按钮 -->
+            <div id="controls-container" style="position: absolute; top: 10px; right: 10px; z-index: 1000; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                <div style="margin-bottom: 10px;">
+                    <input type="checkbox" id="toggle-layer1" checked style="margin-right: 5px; cursor: pointer;">
+                    <label for="toggle-layer1" style="cursor: pointer;">Damage assessment</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="toggle-layer2" checked style="margin-right: 5px; cursor: pointer;">
+                    <label for="toggle-layer2" style="cursor: pointer;">Google satellite</label>
+                </div>
+            </div>
+            <!-- 添加图例-->
+            <div id="legend" style="position: absolute; bottom: 30px; right: 10px; z-index: 1000; background-color: white; border: 1px solid #ccc; border-radius: 4px; padding: 10px; font-size: 14px;">
+                <h4 style="margin: 0 0 10px 0; font-size: 14px;">Damage levels</h4>
+                <div style="margin-bottom: 5px;">
+                    <span style="display: inline-block; width: 20px; height: 20px; background-color: green; margin-right: 5px; border: 1px solid #ccc;"></span>
+                    No damage
+                </div>
+                <div style="margin-bottom: 5px;">
+                    <span style="display: inline-block; width: 20px; height: 20px; background-color: orange; margin-right: 5px; border: 1px solid #ccc;"></span>
+                    Minor damage
+                </div>
+                <div style="margin-bottom: 5px;">
+                    <span style="display: inline-block; width: 20px; height: 20px; background-color: purple; margin-right: 5px; border: 1px solid #ccc;"></span>
+                    Major damage
+                </div>
+                <div style="margin-bottom: 5px;">
+                    <span style="display: inline-block; width: 20px; height: 20px; background-color: red; margin-right: 5px; border: 1px solid #ccc;"></span>
+                    Destroy
+                </div>
+            </div>
         </div>
         <script src="resources/qgis2web_expressions.js"></script>
         <script src="./resources/functions.js"></script>

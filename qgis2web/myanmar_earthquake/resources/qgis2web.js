@@ -541,23 +541,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 确保目标图层已经加载到地图中
 console.log('layerList', layersList); // 检查 layersList 中的图层
-var floodLayer=layersList[2];
+var dmgLayer=layersList[2];
 
-if (floodLayer) {
+if (dmgLayer) {
     // 初始状态：显示图层
-    floodLayer.setVisible(true);
-    // 添加按钮点击事件
-    document.getElementById('toggle-layer1').addEventListener('click', function() {
-        var isVisible = floodLayer.getVisible();
-        floodLayer.setVisible(!isVisible);
-        
-        // 更新按钮文本
-        this.innerHTML = isVisible 
-            ? '<i class="fas fa-eye"></i> Show Earthquake Layer' 
-            : '<i class="fas fa-eye-slash"></i> Hide Earthquake Layer';
+    dmgLayer.setVisible(true);
+    // 添加复选框的 change 事件
+    document.getElementById('toggle-layer1').addEventListener('change', function () {
+        var isChecked = this.checked;
+        dmgLayer.setVisible(isChecked);
     });
 } else {
-    console.error('Earthquake 图层未找到');
+    console.error('Building damage assessment 图层未找到');
 }
 
 var baseLayer = layersList[0];
@@ -566,15 +561,10 @@ if (baseLayer) {
     // 初始状态：显示图层
     baseLayer.setVisible(true);
     // 添加按钮点击事件
-    document.getElementById('toggle-layer2').addEventListener('click', function() {
-        var isVisible = baseLayer.getVisible();
-        baseLayer.setVisible(!isVisible);
-        
-        // 更新按钮文本
-        this.innerHTML = isVisible 
-            ? '<i class="fas fa-eye"></i> Show Satellite Layer' 
-            : '<i class="fas fa-eye-slash"></i> Hide Satellite Layer';
+    document.getElementById('toggle-layer2').addEventListener('change', function() {
+        var isChecked = this.checked;
+        baseLayer.setVisible(isChecked);
     });
 } else {
-    console.error('Satellite 图层未找到');
+    console.error('Google satellite 图层未找到');
 }

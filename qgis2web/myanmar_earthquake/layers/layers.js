@@ -12,20 +12,20 @@ var wms_layers = [];
                 url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
             })
         });
-var format_mask_1 = new ol.format.GeoJSON();
-var features_mask_1 = format_mask_1.readFeatures(json_mask_1, 
+var format_mask_2_1 = new ol.format.GeoJSON();
+var features_mask_2_1 = format_mask_2_1.readFeatures(json_mask_2_1, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_mask_1 = new ol.source.Vector({
+var jsonSource_mask_2_1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_mask_1.addFeatures(features_mask_1);
-var lyr_mask_1 = new ol.layer.Vector({
+jsonSource_mask_2_1.addFeatures(features_mask_2_1);
+var lyr_mask_2_1 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_mask_1, 
-                style: style_mask_1,
-                popuplayertitle: 'mask',
+                source:jsonSource_mask_2_1, 
+                style: style_mask_2_1,
+                popuplayertitle: 'mask_2',
                 interactive: true,
-                title: '<img src="styles/legend/mask_1.png" /> mask'
+                title: '<img src="styles/legend/mask_2_1.png" /> mask_2'
             });
 var format_Myanmarearthquake_2 = new ol.format.GeoJSON();
 var features_Myanmarearthquake_2 = format_Myanmarearthquake_2.readFeatures(json_Myanmarearthquake_2, 
@@ -46,13 +46,13 @@ var lyr_Myanmarearthquake_2 = new ol.layer.Vector({
     <img src="styles/legend/Myanmarearthquake_2_2.png" /> 3<br />\
     <img src="styles/legend/Myanmarearthquake_2_3.png" /> 4<br />' });
 
-lyr_GoogleSatellite_0.setVisible(true);lyr_mask_1.setVisible(true);lyr_Myanmarearthquake_2.setVisible(true);
-var layersList = [lyr_GoogleSatellite_0,lyr_mask_1,lyr_Myanmarearthquake_2];
-lyr_mask_1.set('fieldAliases', {});
+lyr_GoogleSatellite_0.setVisible(true);lyr_mask_2_1.setVisible(true);lyr_Myanmarearthquake_2.setVisible(true);
+var layersList = [lyr_GoogleSatellite_0,lyr_mask_2_1,lyr_Myanmarearthquake_2];
+lyr_mask_2_1.set('fieldAliases', {});
 lyr_Myanmarearthquake_2.set('fieldAliases', {'fid': 'fid', 'value': 'value', 'classification': 'classification', });
-lyr_mask_1.set('fieldImages', {});
-lyr_Myanmarearthquake_2.set('fieldImages', {'fid': 'TextEdit', 'value': 'TextEdit', 'classification': '', });
-lyr_mask_1.set('fieldLabels', {});
+lyr_mask_2_1.set('fieldImages', {});
+lyr_Myanmarearthquake_2.set('fieldImages', {'fid': 'Range', 'value': 'TextEdit', 'classification': 'TextEdit', });
+lyr_mask_2_1.set('fieldLabels', {});
 lyr_Myanmarearthquake_2.set('fieldLabels', {'fid': 'hidden field', 'value': 'hidden field', 'classification': 'inline label - visible with data', });
 lyr_Myanmarearthquake_2.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';

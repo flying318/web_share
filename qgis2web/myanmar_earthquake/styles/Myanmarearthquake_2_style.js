@@ -43,7 +43,8 @@ var style_Myanmarearthquake_2 = function(feature, resolution){
         variables: {}
     };
     
-    var labelText = ""; var value = feature.get("value");
+    var labelText = ""; 
+    var value = feature.get("value");
     var labelFont = "10px, sans-serif";
     var labelFill = "#000000";
     var bufferColor = "";
